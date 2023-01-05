@@ -13,13 +13,12 @@ class SlotMachineBloc extends Bloc<SlotMachineEvent, SlotMachineState> {
   SlotMachineBloc({required UsersRepository usersRepository})
       : _usersRepository = usersRepository,
         super(UsersLoading()) {
-    on<LoadUsers>(_onLoadedUsers);
+    on<SlotMachineEvent>(_onLoadedUsers);
   }
 
   Future<void> _onLoadedUsers(
-      LoadUsers event, Emitter<SlotMachineState> emit) async {
+      SlotMachineEvent event, Emitter<SlotMachineState> emit) async {
     final users = await _usersRepository.getUsers();
     emit(UsersLoaded(users: users));
-    // print(users);
   }
 }

@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:roller_list/roller_list.dart';
+import 'package:slot_machine/repository/users_repository.dart';
 
 import '../slot_machine/slot_machine_bloc.dart';
 
@@ -108,6 +109,7 @@ class _SlotMachineState extends State<SlotMachine> {
   @override
   void initState() {
     super.initState();
+    BlocProvider.of<SlotMachineBloc>(context);
   }
 
   @override

@@ -15,7 +15,7 @@ class UsersRepository extends BaseUsersRepository {
       users = (json.decode(response.body) as List)
           .map((data) => Users.fromMap(data))
           .toList();
-      // print(users);
+      print(users);
     } else {
       throw Exception('Failed to load users');
     }

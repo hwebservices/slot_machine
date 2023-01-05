@@ -1,12 +1,10 @@
 part of 'slot_machine_bloc.dart';
 
 @immutable
-abstract class SlotMachineEvent extends Equatable {}
-
-class LoadUsers extends SlotMachineEvent {
-  final List<Users> users;
-
-  LoadUsers({required this.users});
+class SlotMachineEvent extends Equatable {
   @override
-  List<Object> get props => [users];
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError();
 }
+
+class LoadUsers extends SlotMachineEvent {}
